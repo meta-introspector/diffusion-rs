@@ -1,6 +1,7 @@
 use diffusion_rs::{api::gen_img, preset::{Preset, PresetBuilder}};
 use std::process::Command;
 
+// Use exact original seed from I ARE LIFE experiment
 const BASE_SEED: i64 = 2437596016;
 const PROMPT: &str = "unconstrained";
 
