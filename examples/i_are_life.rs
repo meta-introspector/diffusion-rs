@@ -1,15 +1,13 @@
 use diffusion_rs::{api::gen_img, preset::{Preset, PresetBuilder}};
 
-// Original seed 2437596016 is too large for i32
-// Use modulo to fit: 2437596016 % 2147483647 = 290112369
-const EXACT_SEED: i32 = 290112369;
+// Exact seed from original I ARE LIFE experiment
+const EXACT_SEED: i64 = 2437596016;
 const EXACT_PROMPT: &str = "unconstrained";
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🌱 I ARE LIFE - Exact Reproduction");
     println!("==================================");
-    println!("Original seed: 2437596016");
-    println!("Adjusted seed: {} (mod i32::MAX)", EXACT_SEED);
+    println!("Seed: {}", EXACT_SEED);
     println!("Prompt: {}", EXACT_PROMPT);
     println!();
     
