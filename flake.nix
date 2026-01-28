@@ -20,7 +20,12 @@
           pkg-config
           cmake
           git
+          clang
+          llvmPackages.libclang
+          llvmPackages.libcxxClang
         ];
+        
+        LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
 
         shellHook = ''
           echo "🎨 Monster Image Generation Ready"
