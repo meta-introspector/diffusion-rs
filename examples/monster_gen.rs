@@ -22,11 +22,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         let (config, mut model_config) = PresetBuilder::default()
             .preset(Preset::SDXLTurbo1_0)
-            .prompt(prompt)
-            .output(format!("monster_T_{}.png", prime))
+            .prompt(prompt.to_string())
             .build()?;
         
         gen_img(&config, &mut model_config)?;
+        
+        // Rename output to monster_T_{prime}.png
+        std::fs::rename("output.png", format!("monster_T_{}.png", prime))?;
         println!("   ✓ Saved: monster_T_{}.png\n", prime);
     }
     
